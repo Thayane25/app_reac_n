@@ -18,7 +18,7 @@ export default function Index() {
       {produtos.map((p)=> (
         <View>
         <Text style={estilo.titulo}  >{p.nome}</Text>
-        <Text>{p.preco}</Text>
+        <Text>{p.preco}</Text> 
        </View>
 
     ))}
