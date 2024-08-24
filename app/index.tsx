@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Text, View, StyleSheet } from "react-native";
+import { Button, Text, View, StyleSheet } from "react-native";
+import ListaProdutos from "./Componentes/Adaptadores/ListaProdutos";
 const produtos = [
   {id: 1, nome: "Coca-cola", preco: 5.5},
   {id: 2, nome: "Pepsi", preco: 5.5},
@@ -10,22 +11,21 @@ var contador = 0;
 
 
 export default function Index() {
-  let [contador, setcontador]= useState(0);
+  let [contador, setContador]= useState(0);
   return (
     <View
       style={estilo.container}
     >
-      {produtos.map((p)=> (
-        <View>
-        <Text style={estilo.titulo}  >{p.nome}</Text>
-        <Text>{p.preco}</Text> 
-       </View>
+      <ListaProdutos produtos={produtos}></ListaProdutos>
+      
 
-    ))}
+    <Button
+    title={contador.toString()}
+    onPress={()=>setContador(contador += 1)}
+    color= {'#3399ff'}
+    ></Button>
     </View>
 
-    
-  
   );
 }
 
@@ -34,7 +34,7 @@ export default function Index() {
       flex: 1,
       justifyContent: "center",
       alignItems: "flex-start",
-      backgroundColor: "#FC8EAC",
+      backgroundColor: "#f6b092",
       padding: 20,
     },
     text: {
