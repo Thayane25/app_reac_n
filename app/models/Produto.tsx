@@ -8,7 +8,7 @@ export default interface Produto{
     descricao:string,
     foto:string,
     preco:number,
-    categoria: categoria,
+    categoria: categoria
 
 }
     
